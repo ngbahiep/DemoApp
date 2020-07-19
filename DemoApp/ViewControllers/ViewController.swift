@@ -16,27 +16,18 @@ class ViewController: UIViewController {
     @IBOutlet weak var btnLogin: UIButton!
     @IBOutlet weak var btnSignup: UIButton!
     
-    let locationManager = CLLocationManager()
-    var latitue: CLLocationDegrees = 0.0
-    var longtitude: CLLocationDegrees = 0.0
-    var location: CLLocation!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        locationManager.requestWhenInUseAuthorization()
-        
-        if CLLocationManager.locationServicesEnabled() {
-            locationManager.delegate = self
-            locationManager.desiredAccuracy = kCLLocationAccuracyThreeKilometers
-            locationManager.startUpdatingLocation()
-        }
+        // Make navigation bar transparent
+        self.navigationController!.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController!.navigationBar.shadowImage = UIImage()
+        self.navigationController!.navigationBar.isTranslucent = true
         
         btnLogin.layer.cornerRadius = 30
         btnSignup.layer.cornerRadius = 30
     }
-
 
 //    @IBAction func touchedOnLogin(sender: UIButton) {
 ////        if let homeVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeViewController") as? HomeViewController {
@@ -58,14 +49,4 @@ class ViewController: UIViewController {
 //        }
 //        
 //    }
-}
-
-extension ViewController: CLLocationManagerDelegate {
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        print("didUpdateLocations \(locations)")
-        if locations.count > 0 {
-            location = locations.first
-            locationManager.stopUpdatingLocation()
-        }
-    }
 }

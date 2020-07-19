@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		2D217E2524C34725002C0766 /* AddActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D217E2424C34725002C0766 /* AddActivityViewController.swift */; };
 		2D217E2824C35FC2002C0766 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2D217E2724C35FC2002C0766 /* GoogleService-Info.plist */; };
+		2D217E2A24C41D86002C0766 /* PhoneLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D217E2924C41D85002C0766 /* PhoneLoginViewController.swift */; };
+		2D217E2C24C4272E002C0766 /* VerificationCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D217E2B24C4272E002C0766 /* VerificationCodeViewController.swift */; };
 		2D68D9D924C2DB5D00C934E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D68D9D824C2DB5D00C934E9 /* AppDelegate.swift */; };
 		2D68D9DD24C2DB5D00C934E9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D68D9DC24C2DB5D00C934E9 /* ViewController.swift */; };
 		2D68D9E024C2DB5D00C934E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D68D9DE24C2DB5D00C934E9 /* Main.storyboard */; };
@@ -25,6 +27,8 @@
 		2D217E2424C34725002C0766 /* AddActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddActivityViewController.swift; sourceTree = "<group>"; };
 		2D217E2624C35DD2002C0766 /* DemoApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DemoApp.entitlements; sourceTree = "<group>"; };
 		2D217E2724C35FC2002C0766 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2D217E2924C41D85002C0766 /* PhoneLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneLoginViewController.swift; sourceTree = "<group>"; };
+		2D217E2B24C4272E002C0766 /* VerificationCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationCodeViewController.swift; sourceTree = "<group>"; };
 		2D68D9D524C2DB5D00C934E9 /* DemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D68D9D824C2DB5D00C934E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2D68D9DC24C2DB5D00C934E9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -110,6 +114,8 @@
 				2D68D9DC24C2DB5D00C934E9 /* ViewController.swift */,
 				2D68D9EF24C2E52500C934E9 /* HomeViewController.swift */,
 				2D217E2424C34725002C0766 /* AddActivityViewController.swift */,
+				2D217E2924C41D85002C0766 /* PhoneLoginViewController.swift */,
+				2D217E2B24C4272E002C0766 /* VerificationCodeViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -215,8 +221,10 @@
 				2D68D9F024C2E52500C934E9 /* HomeViewController.swift in Sources */,
 				2D68D9DD24C2DB5D00C934E9 /* ViewController.swift in Sources */,
 				2D68D9D924C2DB5D00C934E9 /* AppDelegate.swift in Sources */,
+				2D217E2A24C41D86002C0766 /* PhoneLoginViewController.swift in Sources */,
 				2D217E2524C34725002C0766 /* AddActivityViewController.swift in Sources */,
 				2D68D9E324C2DB5D00C934E9 /* DemoApp.xcdatamodeld in Sources */,
+				2D217E2C24C4272E002C0766 /* VerificationCodeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
