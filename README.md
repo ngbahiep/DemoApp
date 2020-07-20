@@ -1,7 +1,7 @@
 # DemoApp
 This is demo app
 
-Techinal used in this app:
+Technologies used in this app:
 - Language: Swift
 - Platform: iOS
 - Design pattern: Model - View - ViewModel
