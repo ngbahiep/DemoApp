@@ -9,6 +9,7 @@
 import UIKit
 import SkyFloatingLabelTextField
 import CoreLocation
+import CoreData
 
 class AddActivityViewController: UIViewController, UINavigationControllerDelegate {
 
@@ -18,6 +19,7 @@ class AddActivityViewController: UIViewController, UINavigationControllerDelegat
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var lblLocation: UILabel!
     @IBOutlet weak var lblAddress: UILabel!
+    @IBOutlet weak var btnTakePhoto: UIButton!
     
     var txtName: SkyFloatingLabelTextField!
     var txtDescription: SkyFloatingLabelTextField!
@@ -25,27 +27,25 @@ class AddActivityViewController: UIViewController, UINavigationControllerDelegat
     var location: CLLocation?
     var address: String?
     
+    var modelActivity: ModelActivity?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        btnSubmit.layer.cornerRadius = 30
-        
-        if let location = location {
-            self.lblLocation.text = String(format: "%f, %f", location.coordinate.latitude, location.coordinate.longitude) 
-        }
-        
-        if let address = address {
-            self.lblAddress.text = address
+        if let modelActivity = modelActivity {
+            self.title = "Activity"
         }
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
         
         if nil == txtName {
             txtName = SkyFloatingLabelTextField(frame: vName.frame)
             txtName.placeholder = "Activity Name"
             txtName.title = "Activity Name"
+            txtName.returnKeyType = .done
+            txtName.delegate = self
             self.view.addSubview(txtName)
         }
         
@@ -53,9 +53,37 @@ class AddActivityViewController: UIViewController, UINavigationControllerDelegat
             txtDescription = SkyFloatingLabelTextField(frame: vDescription.frame)
             txtDescription.placeholder = "Activity Desciption"
             txtDescription.title = "Activity Desciption"
+            txtDescription.returnKeyType = .done
+            txtDescription.delegate = self
             self.view.addSubview(txtDescription)
         }
         
+        if let modelActivity = modelActivity {
+            
+            self.title = "Activity"
+            
+            btnSubmit.isHidden = true
+            btnTakePhoto.isHidden = true
+            self.lblAddress.text = modelActivity.address
+            self.txtName.text = modelActivity.name
+            self.txtDescription.text = modelActivity.descriptions
+            self.imageView.image = modelActivity.image
+            
+        } else {
+            btnSubmit.layer.cornerRadius = 30
+            
+            if let location = location {
+                self.lblLocation.text = String(format: "%f, %f", location.coordinate.latitude, location.coordinate.longitude)
+            }
+            
+            if let address = address {
+                self.lblAddress.text = address
+            }
+        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
     }
 
     @IBAction func touchedOnCamera(sender: UIButton) {
@@ -69,7 +97,13 @@ class AddActivityViewController: UIViewController, UINavigationControllerDelegat
     }
     
     @IBAction func touchedOnSubmit(sender: UIButton) {
+        let name = txtName.text ?? ""
+        let descriptions = txtDescription.text ?? ""
+        let gpsLocation = lblLocation.text ?? ""
+        let address = lblAddress.text ?? ""
         
+        let modelActivity = ModelActivity(name: name, descriptions: descriptions, gpsLocation: gpsLocation, address: address, image: imageView.image)
+        modelActivity.save()
     }
 
 }
@@ -83,5 +117,12 @@ extension AddActivityViewController: UIImagePickerControllerDelegate {
             return
         }
         imageView.image = selectedImage
+    }
+}
+
+extension AddActivityViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField .resignFirstResponder()
+        return true
     }
 }

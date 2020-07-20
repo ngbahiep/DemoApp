@@ -7,10 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D13717324C5E1F6009851AD /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D13717224C5E1F6009851AD /* HistoryViewController.swift */; };
+		2D13717724C5EB25009851AD /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D13717624C5EB25009851AD /* HistoryTableViewCell.swift */; };
+		2D13717924C5F4DB009851AD /* ActivityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D13717824C5F4DB009851AD /* ActivityViewModel.swift */; };
 		2D217E2524C34725002C0766 /* AddActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D217E2424C34725002C0766 /* AddActivityViewController.swift */; };
 		2D217E2824C35FC2002C0766 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2D217E2724C35FC2002C0766 /* GoogleService-Info.plist */; };
 		2D217E2A24C41D86002C0766 /* PhoneLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D217E2924C41D85002C0766 /* PhoneLoginViewController.swift */; };
 		2D217E2C24C4272E002C0766 /* VerificationCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D217E2B24C4272E002C0766 /* VerificationCodeViewController.swift */; };
+		2D217E3124C4992D002C0766 /* ModelActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D217E3024C4992D002C0766 /* ModelActivity.swift */; };
 		2D68D9D924C2DB5D00C934E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D68D9D824C2DB5D00C934E9 /* AppDelegate.swift */; };
 		2D68D9DD24C2DB5D00C934E9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D68D9DC24C2DB5D00C934E9 /* ViewController.swift */; };
 		2D68D9E024C2DB5D00C934E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D68D9DE24C2DB5D00C934E9 /* Main.storyboard */; };
@@ -24,11 +28,15 @@
 
 /* Begin PBXFileReference section */
 		22926172447F420A0CE94C85 /* Pods-DemoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoApp.debug.xcconfig"; path = "Target Support Files/Pods-DemoApp/Pods-DemoApp.debug.xcconfig"; sourceTree = "<group>"; };
+		2D13717224C5E1F6009851AD /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		2D13717624C5EB25009851AD /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
+		2D13717824C5F4DB009851AD /* ActivityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewModel.swift; sourceTree = "<group>"; };
 		2D217E2424C34725002C0766 /* AddActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddActivityViewController.swift; sourceTree = "<group>"; };
 		2D217E2624C35DD2002C0766 /* DemoApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DemoApp.entitlements; sourceTree = "<group>"; };
 		2D217E2724C35FC2002C0766 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2D217E2924C41D85002C0766 /* PhoneLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneLoginViewController.swift; sourceTree = "<group>"; };
 		2D217E2B24C4272E002C0766 /* VerificationCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationCodeViewController.swift; sourceTree = "<group>"; };
+		2D217E3024C4992D002C0766 /* ModelActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelActivity.swift; sourceTree = "<group>"; };
 		2D68D9D524C2DB5D00C934E9 /* DemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D68D9D824C2DB5D00C934E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2D68D9DC24C2DB5D00C934E9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -65,6 +73,30 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		2D13717424C5EA30009851AD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2D13717624C5EB25009851AD /* HistoryTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2D13717524C5EAF7009851AD /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				2D13717824C5F4DB009851AD /* ActivityViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2D217E2F24C498EE002C0766 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2D217E3024C4992D002C0766 /* ModelActivity.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		2D68D9CC24C2DB5D00C934E9 = {
 			isa = PBXGroup;
 			children = (
@@ -86,6 +118,9 @@
 		2D68D9D724C2DB5D00C934E9 /* DemoApp */ = {
 			isa = PBXGroup;
 			children = (
+				2D13717524C5EAF7009851AD /* ViewModel */,
+				2D13717424C5EA30009851AD /* View */,
+				2D217E2F24C498EE002C0766 /* Model */,
 				2D217E2724C35FC2002C0766 /* GoogleService-Info.plist */,
 				2D217E2624C35DD2002C0766 /* DemoApp.entitlements */,
 				2D68D9D824C2DB5D00C934E9 /* AppDelegate.swift */,
@@ -116,6 +151,7 @@
 				2D217E2424C34725002C0766 /* AddActivityViewController.swift */,
 				2D217E2924C41D85002C0766 /* PhoneLoginViewController.swift */,
 				2D217E2B24C4272E002C0766 /* VerificationCodeViewController.swift */,
+				2D13717224C5E1F6009851AD /* HistoryViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -222,7 +258,11 @@
 				2D68D9DD24C2DB5D00C934E9 /* ViewController.swift in Sources */,
 				2D68D9D924C2DB5D00C934E9 /* AppDelegate.swift in Sources */,
 				2D217E2A24C41D86002C0766 /* PhoneLoginViewController.swift in Sources */,
+				2D13717724C5EB25009851AD /* HistoryTableViewCell.swift in Sources */,
+				2D217E3124C4992D002C0766 /* ModelActivity.swift in Sources */,
 				2D217E2524C34725002C0766 /* AddActivityViewController.swift in Sources */,
+				2D13717924C5F4DB009851AD /* ActivityViewModel.swift in Sources */,
+				2D13717324C5E1F6009851AD /* HistoryViewController.swift in Sources */,
 				2D68D9E324C2DB5D00C934E9 /* DemoApp.xcdatamodeld in Sources */,
 				2D217E2C24C4272E002C0766 /* VerificationCodeViewController.swift in Sources */,
 			);

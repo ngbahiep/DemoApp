@@ -27,26 +27,18 @@ class ViewController: UIViewController {
         
         btnLogin.layer.cornerRadius = 30
         btnSignup.layer.cornerRadius = 30
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+//        if let homeVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeViewController") as? HomeViewController {
+//            let navigator = UINavigationController(rootViewController: homeVC)
+//            navigator.modalPresentationStyle = .fullScreen
+//            
+//            self.present(navigator, animated: false, completion: nil)
+//        }
     }
 
-//    @IBAction func touchedOnLogin(sender: UIButton) {
-////        if let homeVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeViewController") as? HomeViewController {
-////            homeVC.location = location
-////            let navigator = UINavigationController(rootViewController: homeVC)
-////            self.present(navigator, animated: true, completion: nil)
-////        }
-//        
-//        let phoneNumber = "+60136333741"
-//
-//        PhoneAuthProvider.provider().verifyPhoneNumber(phoneNumber, uiDelegate: nil) { (verificationID, error) in
-//            if let error = error {
-//              print(error)
-//              return
-//            }
-//
-//            print("verificationID \(verificationID)")
-//            UserDefaults.standard.set(verificationID, forKey: "authVerificationID")
-//        }
-//        
-//    }
 }

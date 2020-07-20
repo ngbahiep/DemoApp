@@ -49,6 +49,12 @@ class HomeViewController: UIViewController {
         }
     }
     
+    @IBAction func touchedOnHistory(sender: UIButton) {
+        if let historyVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HistoryViewController") as? HistoryViewController {
+            self.navigationController?.pushViewController(historyVC, animated: true)
+        }
+    }
+    
     func parseLocationToAddress(location: CLLocation) {
         
         let geoCoder = CLGeocoder()
