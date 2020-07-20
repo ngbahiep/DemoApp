@@ -33,12 +33,12 @@ class ViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-//        if let homeVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeViewController") as? HomeViewController {
-//            let navigator = UINavigationController(rootViewController: homeVC)
-//            navigator.modalPresentationStyle = .fullScreen
-//            
-//            self.present(navigator, animated: false, completion: nil)
-//        }
+        if let homeVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeViewController") as? HomeViewController {
+            let navigator = UINavigationController(rootViewController: homeVC)
+            navigator.modalPresentationStyle = .fullScreen
+            
+            self.present(navigator, animated: false, completion: nil)
+        }
     }
 
 }
