@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import CoreLocation
 
 class HistoryViewController: UIViewController {
 
@@ -63,6 +64,14 @@ extension HistoryViewController: UITableViewDelegate {
             let activity = activities[indexPath.row]
             let activityModel = convertToModel(activity: activity)
             addActivityVC.modelActivity = activityModel
+            
+            let latlong = activityModel.gpsLocation.components(separatedBy: ",")
+            debugPrint("latlong: \(latlong)")
+            let latitude = Double(latlong[0])!
+            let longtitude = Double(latlong[1].trimmingCharacters(in: .whitespacesAndNewlines))!
+            let location = CLLocation(latitude:latitude, longitude: longtitude)
+            addActivityVC.location = location
+            
             self.navigationController?.pushViewController(addActivityVC, animated: true)
         }
     }

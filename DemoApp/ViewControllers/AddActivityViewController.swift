@@ -32,8 +32,12 @@ class AddActivityViewController: UIViewController, UINavigationControllerDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let modelActivity = modelActivity {
+        if modelActivity != nil {
             self.title = "Activity"
+        }
+        
+        if let location = location {
+            self.lblLocation.text = String(format: "%f, %f", location.coordinate.latitude, location.coordinate.longitude)
         }
     }
     
@@ -72,14 +76,11 @@ class AddActivityViewController: UIViewController, UINavigationControllerDelegat
         } else {
             btnSubmit.layer.cornerRadius = 30
             
-            if let location = location {
-                self.lblLocation.text = String(format: "%f, %f", location.coordinate.latitude, location.coordinate.longitude)
-            }
-            
             if let address = address {
                 self.lblAddress.text = address
             }
         }
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -104,6 +105,15 @@ class AddActivityViewController: UIViewController, UINavigationControllerDelegat
         
         let modelActivity = ModelActivity(name: name, descriptions: descriptions, gpsLocation: gpsLocation, address: address, image: imageView.image)
         modelActivity.save()
+        
+        let alertVC = UIAlertController(title: "", message: "Your activity is saved successfully", preferredStyle: .alert)
+        let btnAction = UIAlertAction(title: "OK", style: .default) { (uialertAction) in
+            alertVC.dismiss(animated: true) {
+                self.navigationController?.popViewController(animated: true)
+            }
+        }
+        alertVC.addAction(btnAction)
+        self.present(alertVC, animated: true, completion: nil)
     }
 
 }
